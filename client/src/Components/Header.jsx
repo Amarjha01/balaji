@@ -75,16 +75,12 @@ function Header() {
 
         {/* Main Navigation Items */}
         <div
-          className={`w-full md:w-[5/6] flex md:flex-nowrap flex-wrap md:justify-center transition-all duration-500 ease-in-out ${
-            menuOpen ? 'block' : 'hidden md:flex'
-          }`}
+          className={`w-full md:w-[5/6] flex md:flex-nowrap flex-wrap md:justify-center transition-all duration-500 ease-in-out ${menuOpen ? 'block' : 'hidden md:flex'}`}
         >
           {/* Navigation Items */}
           <div
             onClick={() => scrollToSection('hero')}
-            className={`w-full md:w-[11%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${
-              activeSection === 'hero' ? 'bg-black text-white' : 'bg-white text-gray-700'
-            }`}
+            className={`w-full md:w-[11%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${activeSection === 'hero' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
           >
             <span className="text-lg md:text-2xl">
               <FaHome />
@@ -92,9 +88,7 @@ function Header() {
           </div>
           <div
             onClick={() => scrollToSection('price')}
-            className={`w-full md:w-[15%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${
-              activeSection === 'price' ? 'bg-black text-white' : 'bg-white text-gray-700'
-            }`}
+            className={`w-full md:w-[15%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${activeSection === 'price' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
           >
             <span className="text-lg md:text-2xl">
               <FaHome />
@@ -104,9 +98,7 @@ function Header() {
 
           <div
             onClick={() => scrollToSection('site')}
-            className={`w-full md:w-[24%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${
-              activeSection === 'site' ? 'bg-black text-white' : 'bg-white text-gray-700'
-            }`}
+            className={`w-full md:w-[24%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${activeSection === 'site' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
           >
             <span className="text-lg md:text-2xl">
               <FaHome />
@@ -116,9 +108,7 @@ function Header() {
 
           <div
             onClick={() => scrollToSection('amenities')}
-            className={`w-full md:w-[20%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${
-              activeSection === 'amenities' ? 'bg-black text-white' : 'bg-white text-gray-700'
-            }`}
+            className={`w-full md:w-[20%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${activeSection === 'amenities' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
           >
             <span className="text-lg md:text-2xl">
               <FaHome />
@@ -128,9 +118,7 @@ function Header() {
 
           <div
             onClick={() => scrollToSection('gallery')}
-            className={`w-full md:w-[18%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${
-              activeSection === 'gallery' ? 'bg-black text-white' : 'bg-white text-gray-700'
-            }`}
+            className={`w-full md:w-[18%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${activeSection === 'gallery' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
           >
             <span className="text-lg md:text-2xl">
               <FaHome />
@@ -140,9 +128,7 @@ function Header() {
 
           <div
             onClick={() => scrollToSection('location')}
-            className={`w-full md:w-[20%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${
-              activeSection === 'location' ? 'bg-black text-white' : 'bg-white text-gray-700'
-            }`}
+            className={`w-full md:w-[20%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${activeSection === 'location' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
           >
             <span className="text-lg md:text-2xl">
               <FaHome />
