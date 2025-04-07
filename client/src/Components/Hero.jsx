@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import BannerImage from '../assets/Banner.jpg'; // adjust the path if needed
-import 'animate.css';
+import './DownloadBrochureButton.css';
+import { HiDownload } from "react-icons/hi";
+
 
 // This is your OverviewSection component
 const OverviewSection = ({ showMore, setShowMore }) => {
   return (
-    <section className="shadow-sm p-8" id="overview">
-      <h1 className="text-primary font-bold text-3xl capitalize mb-4">
+    <section className="shadow-sm pt-4 pr-4 pb-4 " id="overview">
+      <div className='bg-white p-10 shadow-md'>
+      <h1 className="text-primary font-medium text-5xl capitalize mb-4">
         Welcome to Balaji Kanha
       </h1>
       <p className="text-lg mb-4">
@@ -32,34 +35,15 @@ const OverviewSection = ({ showMore, setShowMore }) => {
         </button>
       </p>
 
-        <button
-      className="relative inline-flex items-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-black to-green-500 rounded-md shadow-lg transform hover:scale-110 hover:shadow-2xl transition-all duration-500"
-    >
-      Download Brochure
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white opacity-20 animate-glossyEffect" />
-    </button>
-
-
-      <div className="free-ride-mobile-section mt-8 text-center">
-        <img
-          className="w-4/5 mx-auto my-4"
-          src="assets/img/free-site-visit.png"
-          alt="Free Site Visit"
-        />
-        <button
-          className="bg-blue-500 text-white py-2 px-4 rounded-md mt-4"
-          data-form="lg"
-          data-title="Book A Free Site Visit"
-          data-btn="Book Now"
-          data-enquiry="Book A Free Site Visit Left Panel"
-          data-redirect="enquiry"
-          data-toggle="modal"
-          data-target="#enqModal"
-        >
-          Book A Free Site Visit
+     <button
+  className="relative overflow-hidden inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-gray-900 to-green-600 rounded-md shadow-lg hover:scale-105 transition-transform duration-300"
+>
+  <HiDownload className="w-6 h-6 bounce-icon z-10" />
+  <span className="z-10">Download Brochure</span>
+  <div className="metallic-shine absolute inset-0 pointer-events-none" />
         </button>
-      </div>
-    </section>
+    </div></section>
+    
   );
 };
 
@@ -68,7 +52,7 @@ function Hero() {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <div id="hero" className="w-full lg:w-[78%] h-308 m-0 p-0 overflow-hidden bg-gray-200 flex flex-col justify-start items-center">
+    <div id="hero" className="w-full lg:w-[78%] m-0 p-0 overflow-hidden bg-gray-50 flex flex-col justify-start items-center">
       <img
         src={BannerImage}
         alt="Banner"

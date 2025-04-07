@@ -58,8 +58,8 @@ function Header() {
             <img src="" alt="" />
           </span>
           <span className="text-2xl font-extralight text-gray-300 mx-2">|</span>
-          <span>
-            <img src="" alt="" />
+          <span className="flex items-center justify-center w-30 h-20 overflow-hidden">
+            <img src="/src/assets/logo.jpeg" alt="Logo" className="object-contain w-full h-full" />
           </span>
 
           {/* Toggle Button (Hamburger or Cross) for mobile */}

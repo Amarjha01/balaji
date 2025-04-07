@@ -7,6 +7,8 @@ import Gallery from './Components/Gallery'
 import Price from './Components/Price'
 import Location from './Components/Location'
 import Footer from './Components/Footer'
+import ContactForm from './Components/ContactForm'
+import HeroForm from './Components/HeroForm'
 
 function Home() {
   return (
@@ -18,6 +20,8 @@ function Home() {
       <Amenities />
       <Gallery />
       <Location />
+      {/* <HeroForm /> */}
+      {/* <ContactForm /> */}
         
       
       <Footer />

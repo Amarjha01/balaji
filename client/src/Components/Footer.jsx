@@ -2,22 +2,20 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 text-sm text-gray-700 lg:w-[78%]">
-      <div className="max-w-7xl mx-auto px-4 py-12 lg:w-[78%] space-y-6">
+    <footer className="bg-gray-50 text-sm text-gray-50 pr-2 w-full lg:w-[78%]">
+      <div className="text-black pt-2">
+      <div className=" mx-auto space-y-6">
 
         {/* SS Life Spaces Section */}
-        <div className="bg-white p-6 shadow-sm mr-2">
-          <h2 className="text-xl font-semibold text-black mb-2">SS Life Spaces</h2>
-          <p>
+        <div className="bg-white p-10 shadow-sm mr-2">
+          <h2 className="text-3xl font-semibold text-black mb-2">SS Life Spaces</h2>
+          <p className="text-lg">
             SS Life Spaces is celebrating its 25th anniversary, a milestone marked by the happiness of over 2000 families who have made our lifespace their home.
             Our journey has been defined by a commitment to delivering affordable luxury through innovative residential complexes across Dombivli, Kalyan, and Thakurli.
             These projects have not just provided homes but have redefined lifestyles, offering top-tier wellness facilities and creating vibrant communities that resonate with modern living ideals.
           </p>
-        </div>
-
-        {/* RERA Information */}
-        <div className="bg-white p-6 shadow-sm flex flex-col gap-3 mr-2">
-          <h3 className="font-semibold text-black">RERA Information</h3>
+        
+          <h3 className="font-semibold text-black mt-8">RERA Information</h3>
           <div className="flex items-center gap-4">
             <img
               src="/path-to-qr.png" // Replace with actual QR image path
@@ -61,7 +59,8 @@ const Footer = () => {
           <a href="#" className="hover:underline">Privacy Policy</a>
           <a href="#" className="hover:underline">Cookies Policy</a>
         </div>
-      </div>
+        </div>
+        </div>
     </footer>
   );
 };

@@ -2,9 +2,10 @@ import React from "react";
 
 const MapSection = () => {
   return (
-    <section className="bg-white px-4 py-10 max-w-7xl lg:w-[78%]">
+    <section id="location" className="bg-gray-50 pt-2 pr-4 pb-4 w-full lg:w-[78%]">
+      <div className="bg-white p-10">
       {/* Section Heading */}
-      <p className="text-sm text-gray-600 mb-2">Address Of Balaji Kanha</p>
+      <h2 className="text-2xl md:text-3xl mb-6">Location of Balaji Vishant</h2>
 
       {/* Map and Location Row */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
@@ -46,8 +47,7 @@ const MapSection = () => {
         <p>📍 Manjunath College - 100 Metre</p>
       </div>
 
-      {/* Divider */}
-      <div className="border-t mt-10 pt-8" />
+        </div>
     </section>
   );
 };
