@@ -9,7 +9,7 @@ const gallery = [
 
 const Gallery = () => {
   return (
-    <div id="gallery" className="pt-2 pr-4 pb-4 bg-gray-50 w-full lg:w-[78%]">
+    <div id="gallery" className="pt-3 md:pr-4 md:pb-4 bg-gray-50 w-full lg:w-[78%]">
       <div className='p-10 bg-white'>
       <h2 className="text-2xl md:text-3xl font-semibold mb-6">Gallery of Balaji Vishant</h2>
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-6">

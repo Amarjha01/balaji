@@ -3,7 +3,7 @@ import "./DownloadBrochureButton.css"; // Make sure this CSS is imported
 
 const Site = () => {
   return (
-    <section id="site" className="pt-5 pr-4 pb-4 bg-gray-50 w-full lg:w-[78%]">
+    <section id="site" className="pt-3 md:pr-4 md:pb-2 bg-gray-50 w-full lg:w-[78%]">
       <div className="bg-white p-10">
       <h2 className="text-3xl font-bold text-gray-800 mb-8">Floor Plan</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

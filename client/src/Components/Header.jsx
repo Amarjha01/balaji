@@ -3,12 +3,10 @@ import { FaHome, FaBars, FaTimes } from 'react-icons/fa';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero'); // Default active section
+  const [activeSection, setActiveSection] = useState('hero');
 
-  // Toggle menu visibility
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  // Function to scroll to a particular section
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -16,7 +14,6 @@ function Header() {
     }
   };
 
-  // IntersectionObserver callback to detect when sections come into view
   const observeSections = () => {
     const sections = ['hero', 'price', 'site', 'amenities', 'gallery', 'location'];
 
@@ -24,14 +21,13 @@ function Header() {
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            setActiveSection(entry.target.id); // Set the active section based on visibility
+            setActiveSection(entry.target.id);
           }
         });
       },
-      { threshold: 0.5 } // When 50% of the section is visible
+      { threshold: 0.5 }
     );
 
-    // Start observing all sections
     sections.forEach(sectionId => {
       const section = document.getElementById(sectionId);
       if (section) {
@@ -40,101 +36,81 @@ function Header() {
     });
 
     return () => {
-      observer.disconnect(); // Cleanup observer on unmount
+      observer.disconnect();
     };
   };
 
   useEffect(() => {
     const cleanupObserver = observeSections();
-    return cleanupObserver; // Cleanup observer on component unmount
+    return cleanupObserver;
   }, []);
 
   return (
     <div className="w-full lg:w-[78%] fixed top-0 left-0 z-50">
-      <div className="h-16 flex flex-wrap md:flex-nowrap bg-white shadow-md">
+      <div className="h-auto flex flex-wrap md:flex-nowrap  bg-white shadow-md">
+
         {/* Logo Section */}
-        <div className="w-full md:w-1/6 bg-white flex justify-center items-center border-r">
-          <span>
-            <img src="" alt="" />
-          </span>
-          <span className="text-2xl font-extralight text-gray-300 mx-2">|</span>
-          <span className="flex items-center justify-center w-30 h-20 overflow-hidden">
-            <img src="/src/assets/logo.jpeg" alt="Logo" className="object-contain w-full h-full" />
+        <div className="w-full md:w-1/6 bg-white items-center border-r border-gray-300 flex md:flex-col md:flex-row md:items-center md:justify-center relative">
+          {/* Logo 1 - Only on Desktop */}
+          <span className=" md:block">
+            <img src="/src/assets/logo1.jpg" alt="Logo1" className="w-[100px]" />
           </span>
 
-          {/* Toggle Button (Hamburger or Cross) for mobile */}
-          <div className="md:hidden flex justify-end w-full py-4 px-4">
+          {/* Divider - Only on Desktop */}
+          <span className="hidden md:block text-2xl font-extralight text-gray-300 mx-2">|</span>
+
+          {/* Centered Logo for Mobile */}
+          <div className="flex md:hidden w-full ml-[17%] md:py-2">
+            <img
+              src="/src/assets/logo.jpeg"
+              alt="Logo"
+              className="object-contain h-16 w-auto"
+            />
+          </div>
+
+          {/* Logo 2 - Only on Desktop */}
+          <div className="hidden md:flex items-center justify-center">
+            <img
+              src="/src/assets/logo.jpeg"
+              alt="Logo"
+              className="object-contain h-20 w-auto"
+            />
+          </div>
+
+          {/* Toggle Button for Mobile */}
+          <div className="md:hidden absolute top-4 right-4">
             <button
               onClick={toggleMenu}
-              className="text-2xl border-1 px-3 py-2 rounded-md text-gray-700 border-gray-200"
+              className="text-2xl border px-3 py-2 rounded-md text-gray-700 border-gray-200"
             >
               {menuOpen ? <FaTimes /> : <FaBars />}
             </button>
           </div>
         </div>
 
-        {/* Main Navigation Items */}
+        {/* Navigation Menu */}
         <div
           className={`w-full md:w-[5/6] flex md:flex-nowrap flex-wrap md:justify-center transition-all duration-500 ease-in-out ${menuOpen ? 'block' : 'hidden md:flex'}`}
         >
-          {/* Navigation Items */}
-          <div
-            onClick={() => scrollToSection('hero')}
-            className={`w-full md:w-[11%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${activeSection === 'hero' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
-          >
-            <span className="text-lg md:text-2xl">
-              <FaHome />
-            </span>
-          </div>
-          <div
-            onClick={() => scrollToSection('price')}
-            className={`w-full md:w-[15%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${activeSection === 'price' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
-          >
-            <span className="text-lg md:text-2xl">
-              <FaHome />
-            </span>
-            <p className="px-1 text-xs md:text-md">Price</p>
-          </div>
-
-          <div
-            onClick={() => scrollToSection('site')}
-            className={`w-full md:w-[24%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${activeSection === 'site' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
-          >
-            <span className="text-lg md:text-2xl">
-              <FaHome />
-            </span>
-            <p className="px-1 text-xs md:text-md">Site & Floor Plan</p>
-          </div>
-
-          <div
-            onClick={() => scrollToSection('amenities')}
-            className={`w-full md:w-[20%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${activeSection === 'amenities' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
-          >
-            <span className="text-lg md:text-2xl">
-              <FaHome />
-            </span>
-            <p className="px-1 text-xs md:text-md">Amenities</p>
-          </div>
-
-          <div
-            onClick={() => scrollToSection('gallery')}
-            className={`w-full md:w-[18%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${activeSection === 'gallery' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
-          >
-            <span className="text-lg md:text-2xl">
-              <FaHome />
-            </span>
-            <p className="px-1 text-xs md:text-md">Gallery</p>
-          </div>
-
-          <div
-            onClick={() => scrollToSection('location')}
-            className={`w-full md:w-[20%] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${activeSection === 'location' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
-          >
-            <span className="text-lg md:text-2xl">
-              <FaHome />
-            </span>
-            <p className="px-1 text-xs md:text-md">Location</p>
-          </div>
+          {[
+            { id: 'hero', label: '', icon: <FaHome /> },
+            { id: 'price', label: 'Price', icon: <FaHome /> },
+            { id: 'site', label: 'Site & Floor Plan', icon: <FaHome /> },
+            { id: 'amenities', label: 'Amenities', icon: <FaHome /> },
+            { id: 'gallery', label: 'Gallery', icon: <FaHome /> },
+            { id: 'location', label: 'Location', icon: <FaHome /> },
+          ].map((item, index) => (
+            <div
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`w-full md:w-[${item.label === '' ? '11%' : item.label === 'Site & Floor Plan' ? '24%' : item.label === 'Price' ? '15%' : '18%'}] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${activeSection === item.id ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
+            >
+              <span className="text-lg md:text-2xl">{item.icon}</span>
+              {item.label && (
+                <p className="px-1 text-xs md:text-md">{item.label}</p>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </div>

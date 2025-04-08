@@ -2,7 +2,7 @@ import React from "react";
 
 const MapSection = () => {
   return (
-    <section id="location" className="bg-gray-50 pt-2 pr-4 pb-4 w-full lg:w-[78%]">
+    <section id="location" className="bg-gray-50 pt-3 md:pr-4 md:pb-4 w-full lg:w-[78%]">
       <div className="bg-white p-10">
       {/* Section Heading */}
       <h2 className="text-2xl md:text-3xl mb-6">Location of Balaji Vishant</h2>
@@ -28,12 +28,16 @@ const MapSection = () => {
         {/* Right: Location Map Image */}
         <div>
           <h2 className="text-2xl font-bold text-center mb-4">Location Map</h2>
-          <div className="border rounded flex items-center justify-center h-[300px]">
-            <img
-              src="/map-icon.png" // replace with your icon
-              alt="Location Icon"
-              className="w-28 h-28 object-contain"
-            />
+          <div className="relative w-full group overflow-hidden h-[300px]">
+      <img
+        src="/src/assets/costing.webp"
+        alt="Costing Details"
+        className="w-full h-[300px] border cursor-pointer"
+      />
+            <div className="absolute inset-x-0 bottom-0 bg-black opacity-50 h-0 group-hover:h-full transition-all duration-500 ease-in-out"></div>
+            <button className= "absolute inset-x-0 top-[-100%] text-white border-1  bg-black/75 cursor-pointer text-lg w-[70%] ml-[15%] px-3 py-2 rounded-md group-hover:top-[40%] transition-all duration-700 ease-in-out" >
+              Hover me
+            </button>
           </div>
         </div>
       </div>
