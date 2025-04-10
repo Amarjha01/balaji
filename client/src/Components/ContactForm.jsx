@@ -9,6 +9,20 @@ import priceIcon from '../assets/price.png';
 
 const ContactForm = () => {
   const [showForm, setShowForm] = useState(false);
+  const [selectedCountryCode, setSelectedCountryCode] = useState('+91');
+
+  const countryCodes = [
+    { name: 'India', code: '+91' },
+    { name: 'United States', code: '+1' },
+    { name: 'United Arab Emirates', code: '+971' },
+    { name: 'United Kingdom', code: '+44' },
+    { name: 'Canada', code: '+1' },
+    { name: 'Australia', code: '+61' },
+    { name: 'Germany', code: '+49' },
+    { name: 'Singapore', code: '+65' },
+    { name: 'South Africa', code: '+27' },
+    { name: 'New Zealand', code: '+64' },
+  ];
 
   useEffect(() => {
     const timer = setTimeout(() => setShowForm(true), 1000);
@@ -34,18 +48,16 @@ const ContactForm = () => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/80 z-50 max-h-screen">
-      <div className="relative w-full max-w-2xl mx-auto bg-white rounded-md shadow-lg flex flex-row gap-4">
-        
+      <div className="relative w-full max-w-2xl mx-auto bg-white rounded-md shadow-lg flex flex-row gap-4 animate-fade-in">
         {/* Close Button */}
         <div className="absolute top-0 w-full text-white flex justify-end p-6 rounded-t-md">
-          {/* <h1 className="text-white flex-1 text-center text-3xl font-semibold">Hello</h1 */}
           <button className="text-black text-2xl hover:text-red-600" onClick={handleClose}>
             <IoClose />
           </button>
         </div>
 
         {/* Left Side - Promises */}
-        <div className="p-8 w-[30%] bg-gray-100 rounded-l-lg  space-y-8">
+        <div className="p-8 w-[30%] bg-gray-100 rounded-l-lg space-y-8">
           <h2 className="text-2xl font-semibold text-center mt-5">We Promise</h2>
           {promises.map((promise, index) => (
             <div key={index} className="flex flex-col items-center text-center space-y-2">
@@ -70,6 +82,7 @@ const ContactForm = () => {
               </h3>
             </div>
 
+            {/* Full Name */}
             <input
               type="text"
               name="entry.YOUR_FULLNAME_ENTRY_ID"
@@ -77,6 +90,8 @@ const ContactForm = () => {
               className="w-full px-2 py-2 border-b text-gray-500 text-lg focus:outline-none"
               required
             />
+
+            {/* Email */}
             <input
               type="email"
               name="entry.YOUR_EMAIL_ENTRY_ID"
@@ -84,10 +99,23 @@ const ContactForm = () => {
               className="w-full px-2 py-2 border-b text-gray-500 text-lg focus:outline-none"
               required
             />
+
+            {/* Phone Number with Country Code */}
             <div className="flex gap-2">
-              <select className="w-1/3 px-2 py-2 border-b text-gray-900 text-lg focus:outline-none" disabled>
-                <option>India (+91)</option>
+              <select
+                className="w-1/3 px-2 py-2 border-b text-gray-900 text-lg focus:outline-none"
+                name="entry.YOUR_COUNTRY_CODE_ENTRY_ID" // Replace with actual Google Form entry ID
+                value={selectedCountryCode}
+                onChange={(e) => setSelectedCountryCode(e.target.value)}
+                required
+              >
+                {countryCodes.map((country, index) => (
+                  <option key={index} value={country.code}>
+                    {country.name} ({country.code})
+                  </option>
+                ))}
               </select>
+
               <input
                 type="tel"
                 name="entry.YOUR_PHONE_ENTRY_ID"
@@ -97,6 +125,7 @@ const ContactForm = () => {
               />
             </div>
 
+            {/* Consent */}
             <div className="text-xs">
               <label className="inline-flex items-start">
                 <input type="checkbox" className="mt-1 mr-2" required />
@@ -113,10 +142,11 @@ const ContactForm = () => {
               </label>
             </div>
 
+            {/* Submit */}
             <div className="text-center">
-              <button type="submit" className="relative text-white bg-gradient-to-r from-black to-green-600 font-bold py-2 px-6 rounded-lg overflow-hidden">
+              <button type="submit" className="relative text-white bg-gradient-to-r from-black to-green-600 font-bold py-2 px-6 rounded-lg overflow-hidden metallic-shine-wrapper">
                 <span className="z-10 relative">Send Now</span>
-                <span className="metallic-shine"></span>
+                <span className="metallic-shine absolute inset-0" />
               </button>
             </div>
           </form>

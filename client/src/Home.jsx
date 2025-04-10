@@ -8,18 +8,24 @@ import Price from './Components/Price'
 import Location from './Components/Location'
 import Footer from './Components/Footer'
 import ContactForm from './Components/ContactForm'
-import HeroForm from './Components/HeroForm'
+import HeroForm from './Components/PriceForm'
+import QuoteForm from './Components/QuoteForm'
+
 
 function Home() {
   return (
     <>
       <Header />
+      <div className="pt-[50px]">
         <Hero />
       <Price />
       <Site />
       <Amenities />
       <Gallery />
-      <Location />
+        <Location />
+        <QuoteForm />
+        </div>
+      
       {/* <HeroForm /> */}
       {/* <ContactForm /> */}
         

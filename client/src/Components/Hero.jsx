@@ -1,64 +1,67 @@
 import React, { useState } from 'react';
-import BannerImage from '../assets/Banner.jpg'; // adjust the path if needed
+import BannerImage from '../assets/Banner 4.png';
 import './DownloadBrochureButton.css';
-import { HiDownload } from "react-icons/hi";
+import { HiDownload } from 'react-icons/hi';
+import DownloadForm from './DownloadForm'; // Import the DownloadForm component
 
-// This is your OverviewSection component
-const OverviewSection = ({ showMore, setShowMore }) => {
-  return (
-    <section className="shadow-sm md:pt-4 md:pr-4 md:pb-4 " id="overview">
-      <div className='bg-white p-10 shadow-md'>
-        <h1 className="text-primary font-medium text-[24px] md:text-5xl capitalize mb-4">
-          Welcome to Balaji Kanha
-        </h1>
-        <p className="text-md text-black md:text-lg mb-4">
-          Come and Experience, where every pleasure of life is just a short
-          distance away. Everything you need is close to you. Balaji Govind's
-          towering presence just 3 minutes from the railway station will signify
-          for its residents, the perfect synergy of comfort with connectivity.
-        </p>
-        <p className="text-lg mb-4">
-          {showMore && (
-            <span className="block">
-              Its uniqueness lies in the belts interesting convenience triangle
-              that brings corporates, working professionals and retail within
-              striking distance of each other creating in the process, a
-              self-sustaining environment of growth.
-            </span>
-          )}
-          <button
-            className="text-blue-500 underline mt-2"
-            onClick={() => setShowMore(!showMore)}
-          >
-            {showMore ? 'Read less' : 'Read more'}
-          </button>
-        </p>
-
+const OverviewSection = ({ showMore, setShowMore, openForm }) => (
+  <section className="shadow-sm md:pt-4 md:pr-4 md:pb-4" id="hero">
+    <div className="bg-white p-10 shadow-md">
+      <h1 className="text-primary font-medium text-[24px] md:text-4xl capitalize mb-4">
+        Welcome to Balaji Vishant
+      </h1>
+      <p className="text-md text-black md:text-md mb-4">
+        Be enchanted by the high rise of a MAJESTIC FAÇADE as you drive into the PRISTINE AMBIENCES of Balaji Vishant. Lifting you further are modern ELEVATORS READY to transport you to your apartment at express speed.
+      </p>
+      <p className="text-md mb-4">
+        {showMore && (
+          <span className="block">
+            Entering your SPACIOUSLY AIRY HOME is a feeling best experienced than described. Awaiting your senses is a TASTEFULLY DESIGNED KITCHEN, A ROOMY LIVING AREA, SLEEP-CENTRIC BEDROOMS AND IDEAS-FRIENDLY BATHROOMS. And this is just the beginning of your Vishant wish-list.
+          </span>
+        )}
         <button
-          className="relative overflow-hidden inline-flex items-center gap-2 px-8 py-1 text-md font-semibold text-white bg-gradient-to-r from-gray-900 to-green-600 rounded-md shadow-lg hover:scale-105 transition-transform duration-300"
+          className="text-blue-500 underline mt-2"
+          onClick={() => setShowMore(!showMore)}
         >
-          <HiDownload className="w-6 h-6 bounce-icon z-10" />
-          <span className="z-10">Download Brochure</span>
-          <div className="metallic-shine absolute inset-0 pointer-events-none" />
+          {showMore ? 'Read less' : 'Read more'}
         </button>
-      </div>
-    </section>
-  );
-};
+      </p>
 
-// This is your Hero component where you use the state
+      <button
+        className="relative overflow-hidden inline-flex items-center gap-2 px-13 py-3 text-md font-semibold text-white bg-gradient-to-r from-gray-900 to-green-600 rounded-md shadow-lg hover:scale-105 transition-transform duration-300"
+        onClick={openForm} // Trigger the form to open on button click
+      >
+        <HiDownload className="w-6 h-6 bounce-icon z-10" />
+        <span className="z-10">Download Brochure</span>
+        <div className="metallic-shine absolute inset-0 pointer-events-none" />
+      </button>
+    </div>
+  </section>
+);
+
 function Hero() {
   const [showMore, setShowMore] = useState(false);
+  const [showForm, setShowForm] = useState(false); // State to control form visibility
+
+  const handleFormToggle = () => {
+    setShowForm(true); // Show the form when the button is clicked
+  };
+
+  const handleCloseForm = () => {
+    setShowForm(false); // Hide the form when closed
+  };
 
   return (
-    <div id="hero" className="w-full lg:w-[78%] m-0 p-0 overflow-hidden bg-gray-50 flex flex-col justify-start items-center">
+    <div className="w-full lg:w-[78%] overflow-hidden bg-gray-50 flex flex-col justify-start items-center">
       <img
         src={BannerImage}
         alt="Banner"
-        className="w-full object-cover mt-15"  // Changed to object-cover
+        className="w-full object-cover"
       />
-      {/* Pass showMore and setShowMore as props to OverviewSection */}
-      <OverviewSection showMore={showMore} setShowMore={setShowMore} />
+      <OverviewSection showMore={showMore} setShowMore={setShowMore} openForm={handleFormToggle} />
+      
+      {/* Conditionally render the DownloadForm based on state */}
+      {showForm && <DownloadForm handleClose={handleCloseForm} />}
     </div>
   );
 }

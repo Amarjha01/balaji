@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { FaHome, FaBars, FaTimes } from 'react-icons/fa';
+import { FaHome, FaBars, FaTimes, FaCoins, FaSitemap } from 'react-icons/fa';
+import { FiWifi } from 'react-icons/fi';
+import { IoMdPhotos } from 'react-icons/io';
+import { FaMapLocationDot } from 'react-icons/fa6';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,10 +11,19 @@ function Header() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
+    const offset = 50; // Adjust this to match your header height (in pixels)
+
+    // Delay scroll slightly to ensure section is in DOM
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: sectionPosition - offset,
+          behavior: 'smooth',
+        });
+      }
+    }, 100);
   };
 
   const observeSections = () => {
@@ -25,7 +37,7 @@ function Header() {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.7 }
     );
 
     sections.forEach(sectionId => {
@@ -42,17 +54,31 @@ function Header() {
 
   useEffect(() => {
     const cleanupObserver = observeSections();
+
+    // Detect initial active section on page load
+    const sections = ['hero', 'price', 'site', 'amenities', 'gallery', 'location'];
+    for (const id of sections) {
+      const section = document.getElementById(id);
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top >= 0 && rect.top <= window.innerHeight * 0.7) {
+          setActiveSection(id);
+          break;
+        }
+      }
+    }
+
     return cleanupObserver;
   }, []);
 
   return (
     <div className="w-full lg:w-[78%] fixed top-0 left-0 z-50">
-      <div className="h-auto flex flex-wrap md:flex-nowrap  bg-white shadow-md">
+      <div className=" lg:h-15 flex flex-wrap md:flex-nowrap bg-white shadow-md">
 
         {/* Logo Section */}
         <div className="w-full md:w-1/6 bg-white items-center border-r border-gray-300 flex md:flex-col md:flex-row md:items-center md:justify-center relative">
           {/* Logo 1 - Only on Desktop */}
-          <span className=" md:block">
+          <span className="md:block">
             <img src="/src/assets/logo1.jpg" alt="Logo1" className="w-[100px]" />
           </span>
 
@@ -92,25 +118,53 @@ function Header() {
         <div
           className={`w-full md:w-[5/6] flex md:flex-nowrap flex-wrap md:justify-center transition-all duration-500 ease-in-out ${menuOpen ? 'block' : 'hidden md:flex'}`}
         >
-          {[
-            { id: 'hero', label: '', icon: <FaHome /> },
-            { id: 'price', label: 'Price', icon: <FaHome /> },
-            { id: 'site', label: 'Site & Floor Plan', icon: <FaHome /> },
-            { id: 'amenities', label: 'Amenities', icon: <FaHome /> },
-            { id: 'gallery', label: 'Gallery', icon: <FaHome /> },
-            { id: 'location', label: 'Location', icon: <FaHome /> },
-          ].map((item, index) => (
-            <div
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className={`w-full md:w-[${item.label === '' ? '11%' : item.label === 'Site & Floor Plan' ? '24%' : item.label === 'Price' ? '15%' : '18%'}] px-4 py-2 border-gray-200 flex justify-center items-center border-r cursor-pointer ${activeSection === item.id ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
-            >
-              <span className="text-lg md:text-2xl">{item.icon}</span>
-              {item.label && (
-                <p className="px-1 text-xs md:text-md">{item.label}</p>
-              )}
-            </div>
-          ))}
+          {/* Individual Nav Items */}
+          <div
+            onClick={() => scrollToSection('hero')}
+            className={`w-full md:w-[11%] px-4 py-2 border-r flex justify-center items-center cursor-pointer ${activeSection === 'hero' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
+          >
+            <span className=" md:text-xl"><FaHome /></span>
+          </div>
+
+          <div
+            onClick={() => scrollToSection('price')}
+            className={`w-full md:w-[15%] px-4 py-2 border-r flex justify-center items-center cursor-pointer ${activeSection === 'price' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
+          >
+            <span className="text-lg md:text-xl"><FaCoins /></span>
+            <p className="px-1 text-lg md:text-md">Price</p>
+          </div>
+
+          <div
+            onClick={() => scrollToSection('site')}
+            className={`w-full md:w-[24%] px-4 py-2 border-r flex justify-center items-center cursor-pointer ${activeSection === 'site' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
+          >
+            <span className="text-lg md:text-xl"><FaSitemap /></span>
+            <p className="px-1 text-lg md:text-md">Site & Floor Plan</p>
+          </div>
+
+          <div
+            onClick={() => scrollToSection('amenities')}
+            className={`w-full md:w-[18%] px-4 py-2 border-r flex justify-center items-center cursor-pointer ${activeSection === 'amenities' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
+          >
+            <span className="text-lg md:text-xl"><FiWifi /></span>
+            <p className="px-1 text-lg md:text-md">Amenities</p>
+          </div>
+
+          <div
+            onClick={() => scrollToSection('gallery')}
+            className={`w-full md:w-[16%] px-4 py-2 border-r flex justify-center items-center cursor-pointer ${activeSection === 'gallery' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
+          >
+            <span className="text-lg md:text-xl"><IoMdPhotos /></span>
+            <p className="px-1 text-lg md:text-md">Gallery</p>
+          </div>
+
+          <div
+            onClick={() => scrollToSection('location')}
+            className={`w-full md:w-[16%] px-4 py-2 flex justify-center items-center cursor-pointer ${activeSection === 'location' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}
+          >
+            <span className="text-lg md:text-xl"><FaMapLocationDot /></span>
+            <p className="px-1 text-lg md:text-md">Location</p>
+          </div>
         </div>
       </div>
     </div>
