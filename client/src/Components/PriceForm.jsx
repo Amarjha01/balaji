@@ -68,7 +68,7 @@ const PriceForm = () => {
       <div className="relative w-full max-w-2xl mx-auto bg-white rounded-md shadow-lg flex flex-row gap-4">
         
         {/* Close Button */}
-        <div className="absolute top-0 w-full bg-black text-white flex justify-end p-6 rounded-t-md">
+        <div className="absolute top-0 w-full bg-black text-white flex justify-end p-4 md:p-6 rounded-t-md">
           <h1 className="text-white flex-1 text-center text-3xl font-semibold">Price</h1>
           <button className="text-white text-2xl hover:text-red-600" onClick={handleClose}>
             <IoClose />
@@ -76,7 +76,7 @@ const PriceForm = () => {
         </div>
 
         {/* Left Side */}
-        <div className="p-8 w-[30%] bg-gray-100 rounded-l-md mt-20 space-y-8">
+        <div className="hidden md:block p-8 w-[30%] bg-gray-100 rounded-l-md mt-20 space-y-8">
           <h2 className="text-2xl font-semibold text-center">We Promise</h2>
           {promises.map((promise, index) => (
             <div key={index} className="flex flex-col items-center text-center space-y-2">
@@ -87,7 +87,7 @@ const PriceForm = () => {
         </div>
 
         {/* Right Side - Form */}
-        <div className="p-8 w-[70%]">
+        <div className="p-8 md:w-[70%]">
           {submitted ? (
             <div className="text-center mt-16">
               <h3 className="text-xl font-semibold text-green-600">Your response has been recorded!</h3>
@@ -165,7 +165,7 @@ const PriceForm = () => {
               </div>
 
               <div className="text-center">
-                <button type="submit" className="relative text-white bg-gradient-to-r from-black to-green-600 font-bold py-2 px-6 rounded-lg overflow-hidden">
+                <button type="submit" className="relative text-white bg-gradient-to-r from-black to-green-600 font-bold py-2 px-19 md:px-6 rounded-lg overflow-hidden">
                   <span className="z-10 relative">Send Now</span>
                   <span className="metallic-shine"></span>
                 </button>

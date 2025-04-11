@@ -34,9 +34,9 @@ const Footer = () => {
 
         {/* About Bellamaison */}
           <div className="bg-white p-11 shadow-sm space-y-2 md:mr-2">
-            <div className="flex justify-between">
-              <h3 className="text-3xl font-semibold pb-4 text-black">About Bellamaison Realty</h3>
-              <div className=" w-46 h-9 bg-black rounded-md" >
+            <div className=" md:flex justify-between">
+              <h3 className="text-3xl font-semibold pb-4 text-black ">About Bellamaison Realty</h3>
+              <div className=" w-46 h-9 ml-10 bg-black rounded-md" >
                 <img src="/src/assets/logo3.webp" alt="logo" className=" h-full w-full"/>
               </div>
 
