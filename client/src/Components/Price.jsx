@@ -10,15 +10,20 @@ const pricingData = [
 
 const Price = () => {
   const [showForm, setShowForm] = useState(false);
-  const [formKey, setFormKey] = useState(0);  // State to force re-mount of HeroForm
+  const [formKey, setFormKey] = useState(0); // Force remount form
+  const [showOverlay, setShowOverlay] = useState(false); // Mobile-friendly animation
 
   const handleFormOpen = () => {
     setShowForm(true);
-    setFormKey((prevKey) => prevKey + 1); // Change the key to force re-mount
+    setFormKey((prevKey) => prevKey + 1);
+    // setTimeout(() => {
+    //   const form = document.getElementById('price-form-modal');
+    //   form?.scrollIntoView({ behavior: 'smooth' });
+    // }, 100);
   };
 
   return (
-    <section id="price" className="pt-3 md:pr-4 bg-gray-50 w-full lg:w-[78%]">
+    <section id="price" className="pt-3 px-4 md:pr-4 bg-gray-50 w-full lg:w-[78%]">
       <div className="bg-white p-6 md:p-10">
         <h2 className="text-3xl font-semibold text-gray-800 mb-6">Price</h2>
 
@@ -33,7 +38,10 @@ const Price = () => {
                 <h3 className="text-xl font-bold">{item.type}</h3>
                 <p className="text-gray-500 text-sm">{item.area}</p>
                 <p className="text-lg font-semibold text-gray-800 mt-2">{item.price}</p>
-                <button className="mt-4 px-4 py-2 bg-gradient-to-r from-green-400 to-black text-white rounded">
+                <button
+                  className="mt-4 px-4 py-2 bg-gradient-to-r from-green-400 to-black text-white rounded"
+                  onClick={handleFormOpen}
+                >
                   Price Breakup
                 </button>
               </div>
@@ -60,7 +68,7 @@ const Price = () => {
                     <td className="p-4 border text-center">
                       <button
                         className="relative inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-black to-green-600 cursor-pointer rounded-md shadow-lg overflow-hidden"
-                        onClick={handleFormOpen} // Open form with a fresh key
+                        onClick={handleFormOpen}
                       >
                         <HiCurrencyRupee className="bounce-icon w-5 h-5 z-10" />
                         <span className="z-10">Price Breakup</span>
@@ -75,24 +83,38 @@ const Price = () => {
 
           {/* Costing Image + Enquiry Button */}
           <div className="w-full lg:w-1/3 text-center space-y-4">
-            <div className="relative w-full group overflow-hidden">
+            <div
+              className="relative w-full overflow-hidden cursor-pointer"
+              onClick={() => {
+                setShowOverlay(true);
+                setTimeout(() => {
+                  setShowOverlay(false);
+                  handleFormOpen();
+                }, 300);
+              }}
+            >
               <img
                 src="/src/assets/costing.webp"
                 alt="Costing Details"
-                className="w-full h-auto border cursor-pointer"
+                className="w-full h-auto border"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-black opacity-50 h-0 group-hover:h-full transition-all duration-500 ease-in-out"></div>
-              <button
-                className="absolute inset-x-0 top-[-100%] text-white bg-black/75 text-lg w-[70%] ml-[15%] px-3 py-2 cursor-pointer group-hover:top-[40%] transition-all duration-700 ease-in-out"
-                onClick={handleFormOpen} // Open form with a fresh key
+              <div
+                className={`absolute inset-x-0 bottom-0 bg-black transition-all duration-500 ease-in-out ${
+                  showOverlay ? 'h-full opacity-50' : 'h-0 opacity-0'
+                }`}
+              />
+              <div
+                className={`absolute inset-x-0 text-white bg-black/75 text-lg w-[70%] ml-[15%] px-3 py-2 transition-all duration-700 ease-in-out text-center ${
+                  showOverlay ? 'top-[40%]' : 'top-[-100%]'
+                }`}
               >
                 Enquire Now
-              </button>
+              </div>
             </div>
 
             <button
               className="relative w-full py-3 text-lg font-semibold text-white bg-gradient-to-r from-black to-green-600 rounded-md shadow-lg overflow-hidden"
-              onClick={handleFormOpen} // Open form with a fresh key
+              onClick={handleFormOpen}
             >
               <span className="relative z-10">Complete Costing Details</span>
               <span className="metallic-shine" />
@@ -102,7 +124,11 @@ const Price = () => {
       </div>
 
       {/* Modal Form */}
-      {showForm && <HeroForm key={formKey} showForm={showForm} setShowForm={setShowForm} />}
+      {showForm && (
+        <div id="price-form-modal">
+          <HeroForm key={formKey} showForm={showForm} setShowForm={setShowForm} />
+        </div>
+      )}
     </section>
   );
 };

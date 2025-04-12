@@ -10,6 +10,7 @@ import Footer from './Components/Footer'
 import ContactForm from './Components/ContactForm'
 import HeroForm from './Components/PriceForm'
 import QuoteForm from './Components/QuoteForm'
+import ProjectCardMobile from './Components/ProjectCardMobile'
 
 
 function Home() {
@@ -18,6 +19,7 @@ function Home() {
       <Header />
       <div className="pt-[50px]">
         <Hero />
+        <ProjectCardMobile />
       <Price />
       <Site />
       <Amenities />

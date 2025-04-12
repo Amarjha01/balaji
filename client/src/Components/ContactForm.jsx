@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { IoClose } from 'react-icons/io5';
 import logo from "../assets/logo.jpeg";
 
-// Icon images
 import callbackIcon from '../assets/call.png';
 import siteVisitIcon from '../assets/site.png';
 import priceIcon from '../assets/price.png';
@@ -10,6 +9,12 @@ import priceIcon from '../assets/price.png';
 const ContactForm = () => {
   const [showForm, setShowForm] = useState(false);
   const [selectedCountryCode, setSelectedCountryCode] = useState('+91');
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    consent: false,
+  });
 
   const countryCodes = [
     { name: 'India', code: '+91' },
@@ -38,6 +43,28 @@ const ContactForm = () => {
 
   const handleClose = () => setShowForm(false);
 
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Your request has been sent");
+
+    // Reset form
+    setFormData({
+      fullName: '',
+      email: '',
+      phone: '',
+      consent: false,
+    });
+    setSelectedCountryCode('+91');
+  };
+
   const promises = [
     { icon: callbackIcon, text: 'Instant Call Back' },
     { icon: siteVisitIcon, text: 'Free Site Visit' },
@@ -49,14 +76,12 @@ const ContactForm = () => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/80 z-50 max-h-screen">
       <div className="relative w-full max-w-2xl mx-auto bg-white rounded-md shadow-lg flex flex-row gap-4 animate-fade-in">
-        {/* Close Button */}
         <div className="absolute top-0 w-full text-white flex justify-end p-6 rounded-t-md">
           <button className="text-black text-2xl hover:text-red-600" onClick={handleClose}>
             <IoClose />
           </button>
         </div>
 
-        {/* Left Side - Promises */}
         <div className="p-8 w-[30%] bg-gray-100 rounded-l-lg space-y-8">
           <h2 className="text-2xl font-semibold text-center mt-5">We Promise</h2>
           {promises.map((promise, index) => (
@@ -67,14 +92,8 @@ const ContactForm = () => {
           ))}
         </div>
 
-        {/* Right Side - Form */}
         <div className="p-8 w-[70%]">
-          <form
-            action="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse"
-            method="POST"
-            target="_blank"
-            className="space-y-4"
-          >
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="text-center">
               <img src={logo} alt="Balaji Kanha" className="mt-1 mx-auto h-15 mb-2" />
               <h3 className="text-lg font-semibold">
@@ -82,29 +101,29 @@ const ContactForm = () => {
               </h3>
             </div>
 
-            {/* Full Name */}
             <input
               type="text"
-              name="entry.YOUR_FULLNAME_ENTRY_ID"
+              name="fullName"
               placeholder="Full Name"
+              value={formData.fullName}
+              onChange={handleChange}
               className="w-full px-2 py-2 border-b text-gray-500 text-lg focus:outline-none"
               required
             />
 
-            {/* Email */}
             <input
               type="email"
-              name="entry.YOUR_EMAIL_ENTRY_ID"
+              name="email"
               placeholder="Email Address"
+              value={formData.email}
+              onChange={handleChange}
               className="w-full px-2 py-2 border-b text-gray-500 text-lg focus:outline-none"
               required
             />
 
-            {/* Phone Number with Country Code */}
             <div className="flex gap-2">
               <select
                 className="w-1/3 px-2 py-2 border-b text-gray-900 text-lg focus:outline-none"
-                name="entry.YOUR_COUNTRY_CODE_ENTRY_ID" // Replace with actual Google Form entry ID
                 value={selectedCountryCode}
                 onChange={(e) => setSelectedCountryCode(e.target.value)}
                 required
@@ -118,17 +137,25 @@ const ContactForm = () => {
 
               <input
                 type="tel"
-                name="entry.YOUR_PHONE_ENTRY_ID"
+                name="phone"
                 placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
                 className="w-2/3 px-4 py-2 border-b text-gray-500 text-lg focus:outline-none"
                 required
               />
             </div>
 
-            {/* Consent */}
             <div className="text-xs">
               <label className="inline-flex items-start">
-                <input type="checkbox" className="mt-1 mr-2" required />
+                <input
+                  type="checkbox"
+                  name="consent"
+                  checked={formData.consent}
+                  onChange={handleChange}
+                  className="mt-1 mr-2"
+                  required
+                />
                 <span className='text-[10px]'>
                   I Consent to The Processing of Provided Data According to
                   <a href="https://policies.google.com/privacy" className="text-blue-600 ml-1" target="_blank" rel="noopener noreferrer">
@@ -142,7 +169,6 @@ const ContactForm = () => {
               </label>
             </div>
 
-            {/* Submit */}
             <div className="text-center">
               <button type="submit" className="relative text-white bg-gradient-to-r from-black to-green-600 font-bold py-2 px-6 rounded-lg overflow-hidden metallic-shine-wrapper">
                 <span className="z-10 relative">Send Now</span>

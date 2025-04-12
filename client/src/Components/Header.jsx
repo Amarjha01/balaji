@@ -23,6 +23,11 @@ function Header() {
           behavior: 'smooth',
         });
       }
+
+      // Close menu after navigation (only on mobile)
+      if (window.innerWidth < 768) {
+        setMenuOpen(false);
+      }
     }, 100);
   };
 
@@ -55,7 +60,6 @@ function Header() {
   useEffect(() => {
     const cleanupObserver = observeSections();
 
-    // Detect initial active section on page load
     const sections = ['hero', 'price', 'site', 'amenities', 'gallery', 'location'];
     for (const id of sections) {
       const section = document.getElementById(id);
@@ -72,20 +76,17 @@ function Header() {
   }, []);
 
   return (
-    <div className="w-full lg:w-[78%] fixed top-0 left-0 z-50">
+    <div className="w-full lg:w-[78%] fixed top-0 left-0 z-70">
       <div className=" lg:h-15 flex flex-wrap md:flex-nowrap bg-white shadow-md">
 
         {/* Logo Section */}
         <div className="w-full md:w-1/6 bg-white items-center border-r border-gray-300 flex md:flex-col md:flex-row md:items-center md:justify-center relative">
-          {/* Logo 1 - Only on Desktop */}
           <span className="md:block">
             <img src="/src/assets/logo1.jpg" alt="Logo1" className="w-[100px]" />
           </span>
 
-          {/* Divider - Only on Desktop */}
           <span className="hidden md:block text-2xl font-extralight text-gray-300 mx-2">|</span>
 
-          {/* Centered Logo for Mobile */}
           <div className="flex md:hidden w-full ml-[17%] md:py-2">
             <img
               src="/src/assets/logo.jpeg"
@@ -94,7 +95,6 @@ function Header() {
             />
           </div>
 
-          {/* Logo 2 - Only on Desktop */}
           <div className="hidden md:flex items-center justify-center">
             <img
               src="/src/assets/logo.jpeg"
@@ -103,7 +103,6 @@ function Header() {
             />
           </div>
 
-          {/* Toggle Button for Mobile */}
           <div className="md:hidden absolute top-4 right-4">
             <button
               onClick={toggleMenu}
@@ -118,7 +117,6 @@ function Header() {
         <div
           className={`w-full md:w-[5/6] flex md:flex-nowrap flex-wrap md:justify-center transition-all duration-500 ease-in-out ${menuOpen ? 'block' : 'hidden md:flex'}`}
         >
-          {/* Individual Nav Items */}
           <div
             onClick={() => scrollToSection('hero')}
             className={`w-full md:w-[11%] px-4 py-2 border-r flex justify-center items-center cursor-pointer ${activeSection === 'hero' ? 'bg-black text-white' : 'bg-white text-gray-700'}`}

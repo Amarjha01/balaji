@@ -63,15 +63,15 @@ const DownloadForm = ({ handleClose }) => {
       <div className="relative w-full max-w-2xl mx-auto bg-white rounded-md shadow-lg flex flex-row gap-4">
         
         {/* Close Button */}
-        <div className="absolute top-0 w-full bg-black text-white flex justify-end p-6 rounded-t-md">
-          <h1 className="text-white flex-1 text-center text-3xl font-semibold">Download Now</h1>
+        <div className="absolute top-0 w-full bg-black text-white flex justify-end p-4 md:p-6 rounded-t-md">
+          <h1 className="text-white flex-1 text-center text-2xl md:text-3xl font-semibold">Download Now</h1>
           <button className="text-white text-2xl hover:text-red-600" onClick={handleClose}>
             <IoClose />
           </button>
         </div>
 
         {/* Left Side */}
-        <div className="p-8 w-[30%] bg-gray-100 rounded-l-md mt-20 space-y-8">
+        <div className="p-8 w-[30%] hidden md:block bg-gray-100 rounded-l-md mt-20 space-y-8">
           <h2 className="text-2xl font-semibold text-center">We Promise</h2>
           {promises.map((promise, index) => (
             <div key={index} className="flex flex-col items-center text-center space-y-2">
@@ -82,7 +82,7 @@ const DownloadForm = ({ handleClose }) => {
         </div>
 
         {/* Right Side - Form */}
-        <div className="p-8 w-[70%]">
+        <div className="p-8 md:w-[70%]">
           {submitted ? (
             <div className="text-center mt-16">
               <h3 className="text-xl font-semibold text-green-600">Your response has been recorded!</h3>

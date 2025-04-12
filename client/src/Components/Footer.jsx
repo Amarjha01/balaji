@@ -55,9 +55,9 @@ const Footer = () => {
         </div>
 
           {/* Disclaimer (unchanged) */}
-         <div className="bg-gray-50 shadow-md pl-13 pb-13 mb-5">
+         <div className="bg-gray-50 shadow-md p-4 md:pl-13 md:pb-13 md:mb-5">
           <div className="text-xs text-gray-500 mt-2 pb-6">
-            <p className="pt-8 pr-6 text-xs text-black/80">
+            <p className="md:pt-8 md:pr-6 text-xs text-black/80">
               <strong className="text-xs text-black">Disclaimer: </strong> We are an authorised marketing partner for this project. Provided content is given by respective owners and this website and content is for information purpose only and it does not constitute any offer to avail for any services.
               Prices mentioned are subject to change without prior notice and properties mentioned are subject to availability.
               You can expect a call, SMS or emails on details registered with us.

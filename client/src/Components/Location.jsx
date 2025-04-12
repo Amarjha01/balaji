@@ -38,8 +38,8 @@ const MapSection = () => {
           </div>
 
           {/* Right: Location Map Image */}
-          <div>
-            <h2 className="text-2xl font-bold text-center mb-4">Location Map</h2>
+          <div className="hidden md:block">
+            <h2 className="text-2xl  font-bold text-center mb-4">Location Map</h2>
             <div className="relative w-[250px] md:w-full group overflow-hidden md:h-[300px]">
               <div className="w-full h-[300px] border cursor-pointer flex justify-center">
                 <img
