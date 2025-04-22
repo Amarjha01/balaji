@@ -159,7 +159,7 @@ const VisitForm = () => {
                     <a href="https://policies.google.com/privacy" className="text-blue-600 ml-1" target="_blank" rel="noopener noreferrer">
                       | Terms & Conditions,
                     </a>
-                    I Authorize Balaji Kanha Advisors and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC.
+                    I Authorize Balaji Residency 2 Advisors and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC.
                   </span>
                 </label>
               </div>

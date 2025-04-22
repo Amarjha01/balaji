@@ -4,8 +4,9 @@ import './DownloadBrochureButton.css';
 import HeroForm from './PriceForm';
 
 const pricingData = [
-  { type: '1 BHK', area: '422 Sq.Ft', price: '₹ 48 Lacs Onwards' },
-  { type: '2 BHK', area: '612 Sq.Ft', price: '₹ 68 Lacs Onwards' },
+  { type: '1 BHK', area: '411 Sq.Ft', price: '₹ 50 Lacs Onwards' },
+  { type: '2 BHK', area: '585 Sq.Ft', price: '₹ 72 Lacs Onwards' },
+  { type: '3 BHK', area: '760 Sq.Ft', price: '₹ 95 Lacs Onwards' },
 ];
 
 const Price = () => {

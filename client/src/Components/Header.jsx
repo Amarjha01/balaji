@@ -89,15 +89,15 @@ function Header() {
 
           <div className="flex md:hidden w-full ml-[17%] md:py-2">
             <img
-              src="/src/assets/logo.jpeg"
+              src="/src/assets/logo.jpg"
               alt="Logo"
-              className="object-contain h-16 w-auto"
+              className="object-contain h-20 w-auto"
             />
           </div>
 
           <div className="hidden md:flex items-center justify-center">
             <img
-              src="/src/assets/logo.jpeg"
+              src="/src/assets/logo.jpg"
               alt="Logo"
               className="object-contain h-20 w-auto"
             />

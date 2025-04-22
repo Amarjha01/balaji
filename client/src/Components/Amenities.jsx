@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const amenities = [
-  { name: "CCTV Surveillance", image: "/src/assets/cctv.webp" },
-  { name: "Gymansium", image: "/src/assets/gymansium.jpg" },
-  { name: "Garden", image: "/src/assets/garden.jpg" },
-  { name: "Gazebo", image: "/src/assets/gazebo.jpeg" },
-  { name: "Kids Play Area", image: "/src/assets/kidsplayarea.jpg" },
   { name: "Video Door Phone", image: "/src/assets/video_door_phone.jpeg" },
+  { name: "Kids Play Area", image: "/src/assets/kidsplayarea.jpg" },
+  { name: "Garden", image: "/src/assets/garden.jpg" },
+  { name: "CCTV Surveillance", image: "/src/assets/cctv.webp" },
+  { name: "Gazebo", image: "/src/assets/gazebo.jpeg" },
+  { name: "Gymansium", image: "/src/assets/gymansium.jpg" },
 ];
 
 // Break into groups of 2 for mobile frame
@@ -44,7 +44,7 @@ const Amenities = () => {
   return (
     <div id="amenities" className="pt-3 md:pr-4 md:pb-4 bg-gray-50 w-full lg:w-[78%]">
       <div className='p-6 md:p-10 bg-white'>
-        <h2 className="text-2xl font-semibold mb-6">Amenities Of Balaji Vishant</h2>
+        <h2 className="text-2xl font-semibold mb-6">Amenities Of Balaji Residency 2</h2>
 
         {/* Mobile View: Horizontal scroll frames with 2 vertical cards each */}
         <div className="sm:hidden overflow-hidden" ref={scrollRef}>

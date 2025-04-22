@@ -17,7 +17,7 @@ const MapSection = () => {
     <section id="location" className="bg-gray-50 pt-3 md:pr-4 md:pb-4 w-full lg:w-[78%]">
       <div className="bg-white p-10">
         {/* Section Heading */}
-        <h2 className="text-2xl md:text-3xl font-semibold mb-6">Location of Balaji Vishant</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold mb-6">Location of Balaji Residency 2</h2>
 
         {/* Map and Location Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
@@ -26,7 +26,7 @@ const MapSection = () => {
             <h2 className="text-2xl font-bold text-center mb-4">Map View</h2>
             <div className="border rounded overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.2877803075535!2d73.10222337580879!3d19.226285847236177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be795002295c125%3A0xf3c19cddc54cf886!2sBalaji%20Vishant!5e0!3m2!1sen!2sin!4v1744199771088!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.7229516688235!2d73.10898879999999!3d19.2290275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be795eddebc1537%3A0xce7685de665c91ef!2s90%20Feet%20Rd%2C%20Dombivli%2C%20Maharashtra!5e1!3m2!1sen!2sin!4v1745324043844!5m2!1sen!2sin"
                 width="100%"
                 height="300"
                 allowFullScreen=""

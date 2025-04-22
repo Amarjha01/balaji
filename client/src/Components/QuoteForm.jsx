@@ -119,7 +119,7 @@ const QuoteForm = () => {
             >
               Terms & Conditions
             </a>
-            . I Authorize Balaji Kanha Advisors and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC.
+            . I Authorize Balaji Residency 2 Advisors and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC.
           </span>
         </label>
 

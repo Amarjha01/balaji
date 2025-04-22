@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BannerImage from '../assets/Banner 4.png';
+import BannerImage from '../assets/banner_4.jpg';
 import './DownloadBrochureButton.css';
 import { HiDownload } from 'react-icons/hi';
 import DownloadForm from './DownloadForm';
@@ -9,10 +9,10 @@ const OverviewSection = ({ showMore, setShowMore, openForm }) => (
   <section className="shadow-sm md:pt-4 md:pr-4 md:pb-4" id="hero">
     <div className="bg-white p-10 shadow-md">
       <h1 className="text-primary font-medium text-[24px] md:text-4xl capitalize mb-4">
-        Welcome to Balaji Vishant
+        Welcome to Balaji Residency 2
       </h1>
       <p className="text-md text-black md:text-md mb-4">
-        Be enchanted by the high rise of a MAJESTIC FAÇADE as you drive into the PRISTINE AMBIENCES of Balaji Vishant.
+        Be enchanted by the high rise of a MAJESTIC FAÇADE as you drive into the PRISTINE AMBIENCES of Balaji Residency 2.
         Lifting you further are modern ELEVATORS READY to transport you to your apartment at express speed.
       </p>
       <p className="text-md mb-4">
@@ -20,7 +20,7 @@ const OverviewSection = ({ showMore, setShowMore, openForm }) => (
           <span className="block">
             Entering your SPACIOUSLY AIRY HOME is a feeling best experienced than described. Awaiting your senses is a
             TASTEFULLY DESIGNED KITCHEN, A ROOMY LIVING AREA, SLEEP-CENTRIC BEDROOMS AND IDEAS-FRIENDLY BATHROOMS.
-            And this is just the beginning of your Vishant wish-list.
+            And this is just the beginning of your Balaji Residency 2 wish-list.
           </span>
         )}
         <button

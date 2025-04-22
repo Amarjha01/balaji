@@ -42,7 +42,7 @@ const Gallery = () => {
   return (
     <div id="gallery" className="pt-3 md:pr-4 md:pb-4 bg-gray-50 w-full lg:w-[78%]">
       <div className='p-6 md:p-10 bg-white'>
-        <h2 className="text-2xl font-semibold mb-6">Gallery of Balaji Vishant</h2>
+        <h2 className="text-2xl font-semibold mb-6">Gallery of Balaji Residency 2</h2>
 
         {/* Mobile View: Horizontal scroll frames with 2 vertical cards each */}
         <div className="sm:hidden overflow-hidden" ref={scrollRef}>
