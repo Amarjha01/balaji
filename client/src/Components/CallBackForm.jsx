@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { IoClose } from 'react-icons/io5';
-import logo from "../assets/logo.jpg";
+import logo from "/logo.jpg";
 
 // Icon images
-import callbackIcon from '../assets/call.png';
-import siteVisitIcon from '../assets/site.png';
-import priceIcon from '../assets/price.png';
+import callbackIcon from '/call.png';
+import siteVisitIcon from '/site.png';
+import priceIcon from '/price.png';
 
 const CallBackForm = () => {
   const [showForm, setShowForm] = useState(true);

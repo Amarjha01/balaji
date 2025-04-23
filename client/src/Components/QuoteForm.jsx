@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PhoneCall } from 'lucide-react';
-import logo from '/src/assets/free-site-visit.png'; // adjust path if needed
+import logo from '/free-site-visit.png'; // adjust path if needed
 import CallBackForm from './CallBackForm'; // Import the CallBackForm component
 import VisitForm from './VisitForm'; // Import the VisitForm component
 

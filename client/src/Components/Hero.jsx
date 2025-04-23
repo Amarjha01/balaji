@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BannerImage from "../assets/banner_4.jpg";
+import BannerImage from "/banner_4.jpg";
 import "./DownloadBrochureButton.css";
 import { HiDownload } from "react-icons/hi";
 import DownloadForm from "./DownloadForm";
@@ -48,7 +48,7 @@ const OverviewSection = ({ showMore, setShowMore, openForm }) => (
       {/* Mobile-only Buttons and Image Below Download Brochure */}
       <div className="lg:hidden mt-4 flex flex-col items-center gap-3">
         <img
-          src="/src/assets/free-site-visit.png" // Make sure this path is correct
+          src="/free-site-visit.png" // Make sure this path is correct
           alt="Free Site Visit"
           className="w-[80%] mx-auto mt-2"
         />

@@ -8,7 +8,7 @@ const Footer = () => {
           {/* SS Life Spaces Section */}
           <div className="bg-white pl-11 pr-11 pb-11 pt-6 shadow-sm md:mr-2 ">
             <div className="flex text-center justify-center h-20 ">
-              <img src="/src/assets/logo1.jpg" alt="" className="w-28 h-20 " />
+              <img src="/logo1.jpg" alt="" className="w-28 h-20 " />
             </div>
             <div className=" flex flex-col justify-center items-center md:items-start">
               <h2 className="text-2xl font-semibold text-black mb-2">
@@ -30,7 +30,7 @@ const Footer = () => {
               </h3>
               <div className="flex flex-col gap-2  items-center md:items-start">
                 <img
-                  src="/src/assets/kanhaqrcode.jpg" // Replace with actual QR image path
+                  src="/kanhaqrcode.jpg" // Replace with actual QR image path
                   alt="QR Code"
                   className="w-20 h-24 mt-4 object-contain "
                 />
@@ -52,7 +52,7 @@ const Footer = () => {
               </h3>
               <div className=" w-46 h-9 ml-10 bg-black rounded-md">
                 <img
-                  src="/src/assets/logo3.webp"
+                  src="/logo3.webp"
                   alt="logo"
                   className=" h-full w-full"
                 />

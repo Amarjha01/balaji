@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { IoClose } from 'react-icons/io5';
-import logo from "../assets/logo.jpeg";
+import logo from "/logo.jpeg";
 
-import callbackIcon from '../assets/call.png';
-import siteVisitIcon from '../assets/site.png';
-import priceIcon from '../assets/price.png';
+import callbackIcon from '/call.png';
+import siteVisitIcon from '/site.png';
+import priceIcon from '/price.png';
 
 const ContactForm = () => {
   const [showForm, setShowForm] = useState(false);

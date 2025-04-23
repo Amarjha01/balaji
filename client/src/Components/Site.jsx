@@ -20,7 +20,7 @@ const Site = () => {
           {/* 1 BHK Card */}
           <div className="relative shadow-lg overflow-hidden group border">
             <img
-              src="/src/assets/2bhk.jpeg"
+              src="/2bhk.jpeg"
               alt="1 BHK Floor Plan"
               className="w-full h-70 object-cover"
             />
@@ -48,7 +48,7 @@ const Site = () => {
           {/* 2 BHK Card */}
           <div className="relative shadow-lg overflow-hidden border border-gray-200 group">
             <img
-              src="/src/assets/2bhk.jpeg"
+              src="/2bhk.jpeg"
               alt="2 BHK Floor Plan"
               className="w-full h-70 object-cover"
             />
@@ -75,7 +75,7 @@ const Site = () => {
           {/* 3 BHK Card */}
           <div className="relative shadow-lg overflow-hidden border border-gray-200 group">
             <img
-              src="/src/assets/3bhk.jpg"
+              src="/3bhk.jpg"
               alt="2 BHK Floor Plan"
               className="w-full h-70 object-cover"
             />
