@@ -97,7 +97,7 @@ function Header() {
         <div className="w-full md:w-1/6 bg-white items-center border-r border-gray-300 flex md:flex-col md:flex-row md:items-center md:justify-center relative">
           <a href="https://www.sslifespaces.in/" target="_blank" className="md:block">
             <img
-              src="/src/assets/logo1.jpg"
+              src="/logo1.jpg"
               alt="Logo1"
               className="w-[100px]"
             />
@@ -109,7 +109,7 @@ function Header() {
 
           <div className="flex md:hidden w-full ml-[17%] md:py-2">
             <img
-              src="/src/assets/logo.jpg"
+              src="/logo.jpg"
               alt="Logo"
               className="object-contain h-20 w-auto"
             />
@@ -117,7 +117,7 @@ function Header() {
 
           <div className="hidden md:flex items-center justify-center">
             <img
-              src="/src/assets/logo.jpg"
+              src="/logo.jpg"
               alt="Logo"
               className="object-contain h-20 w-auto"
             />

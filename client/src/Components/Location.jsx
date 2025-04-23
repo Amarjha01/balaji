@@ -50,7 +50,7 @@ const MapSection = () => {
             <div className="relative w-[250px] md:w-full group overflow-hidden md:h-[300px]">
               <div className="w-full h-[300px] border cursor-pointer flex justify-center">
                 <img
-                  src="/src/assets/locate.jpg"
+                  src="/locate.jpg"
                   alt="Costing Details"
                   className="w-[300px] h-[297px] cursor-pointer"
                 />

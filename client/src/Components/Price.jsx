@@ -95,7 +95,7 @@ const Price = () => {
               }}
             >
               <img
-                src="/src/assets/costing.webp"
+                src="/costing.webp"
                 alt="Costing Details"
                 className="w-full h-auto border"
               />

@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const amenities = [
-  { name: "Video Door Phone", image: "/src/assets/video_door_phone.jpeg" },
-  { name: "Kids Play Area", image: "/src/assets/kidsplayarea.jpg" },
-  { name: "Garden", image: "/src/assets/garden.jpg" },
-  { name: "CCTV Surveillance", image: "/src/assets/cctv.webp" },
-  { name: "Gazebo", image: "/src/assets/gazebo.jpeg" },
-  { name: "Gymansium", image: "/src/assets/gymansium.jpg" },
+  { name: "Video Door Phone", image: "/video_door_phone.jpeg" },
+  { name: "Kids Play Area", image: "/kidsplayarea.jpg" },
+  { name: "Garden", image: "/garden.jpg" },
+  { name: "CCTV Surveillance", image: "/cctv.webp" },
+  { name: "Gazebo", image: "/gazebo.jpeg" },
+  { name: "Gymansium", image: "/gymansium.jpg" },
 ];
 
 // Break into groups of 2 for mobile frame

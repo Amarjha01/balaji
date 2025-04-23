@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const gallery = [
-  { image: "/src/assets/b1.jpg" },
-  { image: "/src/assets/b2.jpg" },
-  { image: "/src/assets/b3.jpg" },
-  { image: "/src/assets/b4.jpg" },
-  { image: "/src/assets/b5.jpg" },
-  { image: "/src/assets/b6.jpg" },
+  { image: "/b1.jpg" },
+  { image: "/b2.jpg" },
+  { image: "/b3.jpg" },
+  { image: "/b4.jpg" },
+  { image: "/b5.jpg" },
+  { image: "/b6.jpg" },
 ];
 
 // Break into groups of 2 for mobile frame
