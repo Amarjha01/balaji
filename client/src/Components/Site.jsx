@@ -72,6 +72,33 @@ const Site = () => {
               <span className="metallic-shine"></span>
             </button>
           </div>
+          {/* 3 BHK Card */}
+          <div className="relative shadow-lg overflow-hidden border border-gray-200 group">
+            <img
+              src="/src/assets/3bhk.jpg"
+              alt="2 BHK Floor Plan"
+              className="w-full h-70 object-cover"
+            />
+
+            {/* Hover Overlay */}
+            <div className="absolute inset-x-0 bottom-0 bg-black opacity-50 h-0 group-hover:h-full transition-all duration-500 ease-in-out"></div>
+
+            {/* Hover Button */}
+            <button 
+              className="absolute inset-x-0 top-[-100%] text-white bg-black/75 text-lg w-[70%] ml-[15%] px-3 py-2 cursor-pointer group-hover:top-[40%] transition-all duration-700 ease-in-out z-10"
+              onClick={handleFormOpen}  // Trigger form open on hover button click
+            >
+              Enquire Now
+            </button>
+
+            <button
+              className="relative w-full bg-gradient-to-r from-black to-green-700 text-white py-3 text-center text-xl cursor-pointer font-semibold z-20"
+              onClick={handleFormOpen} // Trigger form open on "2 BHK" button click
+            >
+              3 BHK
+              <span className="metallic-shine"></span>
+            </button>
+          </div>
 
         </div>
       </div>
