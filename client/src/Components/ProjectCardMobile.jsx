@@ -7,7 +7,7 @@ const ProjectCardMobile = () => {
         BOOKING OPEN: LIMITED TIME ONLY
       </div>
       <div className="p-4 text-center bg-white">
-        <h2 className="text-2xl font-bold text-gray-800">Balaji Kanha</h2>
+        <h2 className="text-2xl font-bold text-gray-800">Balaji Residency 2</h2>
         <p className="text-sm text-gray-500 mt-1">At Thakurli, Dombivli East <span className="text-gray-400">By</span> <span className="font-medium text-gray-700">SS Lifespaces</span></p>
         <div className="mt-4 bg-gray-100 p-3 rounded-md text-left text-sm">
           <p><span className="font-semibold text-gray-700">About:</span> <span className="font-bold">29 Storey</span></p>
