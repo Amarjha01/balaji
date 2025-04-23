@@ -1,33 +1,37 @@
-import React, { useState } from 'react';
-import BannerImage from '../assets/banner_4.jpg';
-import './DownloadBrochureButton.css';
-import { HiDownload } from 'react-icons/hi';
-import DownloadForm from './DownloadForm';
-import ProjectCard from './ProjectCard';
+import React, { useState } from "react";
+import BannerImage from "../assets/banner_4.jpg";
+import "./DownloadBrochureButton.css";
+import { HiDownload } from "react-icons/hi";
+import DownloadForm from "./DownloadForm";
+import ProjectCard from "./ProjectCard";
+import ProjectCardMobile from "./ProjectCardMobile";
 
 const OverviewSection = ({ showMore, setShowMore, openForm }) => (
   <section className="shadow-sm md:pt-4 md:pr-4 md:pb-4" id="hero">
-    <div className="bg-white p-10 shadow-md">
+    <div className="bg-white p-10 shadow-md ">
       <h1 className="text-primary font-medium text-[24px] md:text-4xl capitalize mb-4">
         Welcome to Balaji Residency 2
       </h1>
-      <p className="text-md text-black md:text-md mb-4">
-        Be enchanted by the high rise of a MAJESTIC FAÇADE as you drive into the PRISTINE AMBIENCES of Balaji Residency 2.
-        Lifting you further are modern ELEVATORS READY to transport you to your apartment at express speed.
+      <p className="text-[16px] text-black md:text-md mb-4 text-justify">
+        Be enchanted by the high rise of a MAJESTIC FAÇADE as you drive into the
+        PRISTINE AMBIENCES of Balaji Residency 2. Lifting you further are modern
+        ELEVATORS READY to transport you to your apartment at express speed.
       </p>
       <p className="text-md mb-4">
         {showMore && (
           <span className="block">
-            Entering your SPACIOUSLY AIRY HOME is a feeling best experienced than described. Awaiting your senses is a
-            TASTEFULLY DESIGNED KITCHEN, A ROOMY LIVING AREA, SLEEP-CENTRIC BEDROOMS AND IDEAS-FRIENDLY BATHROOMS.
-            And this is just the beginning of your Balaji Residency 2 wish-list.
+            Entering your SPACIOUSLY AIRY HOME is a feeling best experienced
+            than described. Awaiting your senses is a TASTEFULLY DESIGNED
+            KITCHEN, A ROOMY LIVING AREA, SLEEP-CENTRIC BEDROOMS AND
+            IDEAS-FRIENDLY BATHROOMS. And this is just the beginning of your
+            Balaji Residency 2 wish-list.
           </span>
         )}
         <button
-          className="text-blue-500 underline mt-2"
+          className="text-blue-500 underline mt-2 cursor-pointer"
           onClick={() => setShowMore(!showMore)}
         >
-          {showMore ? 'Read less' : 'Read more'}
+          {showMore ? "Read less" : "Read more"}
         </button>
       </p>
 
@@ -51,14 +55,13 @@ const OverviewSection = ({ showMore, setShowMore, openForm }) => (
 
         <button
           className="relative inline-flex items-center justify-center gap-2 px-4 py-2 text-white text-sm bg-gradient-to-r from-black to-green-600 rounded-md shadow-md w-[90%]"
-          onClick={() => alert('Book a Free Site Visit!')} // Replace with actual functionality
+          onClick={() => alert("Book a Free Site Visit!")} // Replace with actual functionality
         >
           <span className="z-10">Book A Free Site Visit</span>
           <span className="metallic-shine absolute inset-0" />
         </button>
 
         {/* Mobile Image */}
-        
       </div>
     </div>
   </section>
@@ -77,20 +80,19 @@ function Hero() {
   };
 
   return (
-    <div className="relative w-full lg:w-[78%] overflow-hidden bg-gray-50 flex flex-col justify-start items-center">
+    <div className="relative w-full lg:w-[78%] overflow-hidden bg-white flex flex-col justify-start items-center">
       {/* Banner image wrapper with relative position for overlay */}
       <div className="relative w-full">
         {/* Show ProjectCard only on large screens */}
-        <div className="hidden lg:block absolute top-4 left-4 z-50">
+        <div className="hidden md:block absolute top-4 left-4 z-50">
           <ProjectCard />
         </div>
 
         {/* Banner Image */}
-        <img
-          src={BannerImage}
-          alt="Banner"
-          className="w-full object-cover"
-        />
+        <img src={BannerImage} alt="Banner" className="w-full object-cover" />
+      <div className="md:hidden p-3">
+          <ProjectCardMobile />
+        </div>
       </div>
 
       {/* Overview Section */}

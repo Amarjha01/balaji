@@ -15,10 +15,13 @@ const ProjectCardMobile = () => {
           <p><span className="font-semibold text-gray-700">Tower:</span> <span className="font-bold">Tower 1</span></p>
         </div>
 
-        <div className="bg-gradient-to-r from-lime-600 to-black text-white mt-4 p-4 rounded-md border-dashed border border-white text-sm font-semibold space-y-1">
+        <div className="bg-gradient-to-r from-lime-600 to-black text-white mt-4 p-2   border-white text-sm font-semibold space-y-1">
+          
+          <div className="border-dashed border-2 p-4 text-center ">
           <p>Spot Booking Offers</p>
           <p>Early Buy Discounts</p>
           <p>Flexi Payment Plan</p>
+          </div>
         </div>
 
         <div className="mt-4 text-sm text-gray-600">

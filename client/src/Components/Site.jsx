@@ -14,11 +14,11 @@ const Site = () => {
   return (
     <section id="site" className="pt-3 md:pr-4 md:pb-2 bg-gray-50 w-full lg:w-[78%]">
       <div className="bg-white p-10">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-8">Floor Plan</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-8">Floor Plans</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 lg:gap-8">
 
           {/* 1 BHK Card */}
-          <div className="relative shadow-lg overflow-hidden group">
+          <div className="relative shadow-lg overflow-hidden group border">
             <img
               src="/src/assets/2bhk.jpeg"
               alt="1 BHK Floor Plan"

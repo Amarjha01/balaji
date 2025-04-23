@@ -1,4 +1,4 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 import DownloadForm from "./DownloadForm"; // Ensure to import the form component
 
@@ -14,10 +14,15 @@ const MapSection = () => {
   };
 
   return (
-    <section id="location" className="bg-gray-50 pt-3 md:pr-4 md:pb-4 w-full lg:w-[78%]">
+    <section
+      id="location"
+      className="bg-gray-50 pt-3 md:pr-4 md:pb-4 w-full lg:w-[78%]"
+    >
       <div className="bg-white p-10">
         {/* Section Heading */}
-        <h2 className="text-2xl md:text-3xl font-semibold mb-6">Location of Balaji Residency 2</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold mb-6">
+          Location of Balaji Residency 2
+        </h2>
 
         {/* Map and Location Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
@@ -39,7 +44,9 @@ const MapSection = () => {
 
           {/* Right: Location Map Image */}
           <div className="hidden md:block">
-            <h2 className="text-2xl  font-bold text-center mb-4">Location Map</h2>
+            <h2 className="text-2xl  font-bold text-center mb-4">
+              Location Map
+            </h2>
             <div className="relative w-[250px] md:w-full group overflow-hidden md:h-[300px]">
               <div className="w-full h-[300px] border cursor-pointer flex justify-center">
                 <img
@@ -61,11 +68,36 @@ const MapSection = () => {
 
         {/* Landmarks List */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mt-6 text-black text-md font-medium">
-          <p className="flex items-center-safe"><span><MdOutlineLocationOn /></span> <span>Dombivli Railway Station - 1.3 KM</span></p>
-          <p className="flex items-center-safe"><span><MdOutlineLocationOn /></span> <span>Thakurli Railway Station - 300 Metre</span></p>
-          <p className="flex items-center-safe"><span><MdOutlineLocationOn /></span> <span>Model College - 700 Metre</span></p>
-          <p className="flex items-center-safe"><span><MdOutlineLocationOn /></span> <span>Greenwood International School - 700 Metre</span></p>
-          <p className="flex items-center-safe"><span><MdOutlineLocationOn /></span> <span>Manjunath College - 600 Metre</span></p>
+          <p className="flex items-center-safe">
+            <span>
+              <MdOutlineLocationOn />
+            </span>{" "}
+            <span>Dombivli Railway Station - 1.3 KM</span>
+          </p>
+          <p className="flex items-center-safe">
+            <span>
+              <MdOutlineLocationOn />
+            </span>{" "}
+            <span>Thakurli Railway Station - 300 Metre</span>
+          </p>
+          <p className="flex items-center-safe">
+            <span>
+              <MdOutlineLocationOn />
+            </span>{" "}
+            <span>Model College - 700 Metre</span>
+          </p>
+          <p className="flex items-center-safe">
+            <span>
+              <MdOutlineLocationOn />
+            </span>{" "}
+            <span>Greenwood International School - 700 Metre</span>
+          </p>
+          <p className="flex items-center-safe">
+            <span>
+              <MdOutlineLocationOn />
+            </span>{" "}
+            <span>Manjunath College - 600 Metre</span>
+          </p>
         </div>
       </div>
 
