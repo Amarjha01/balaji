@@ -33,12 +33,12 @@ const Footer = () => {
                 alt="QR Code"
                 className="w-20 h-24 mt-4 object-contain"
               />
-              <p className="flex">
+              <span className="flex">
                 <h1 className="text-xl">Balaji Residency 2 MahaRERA - </h1>
                 <strong className="text-black font-bold ml-2 text-xl">
                   P51700047811
                 </strong>
-              </p>
+              </span>
             </div>
           </div>
 
